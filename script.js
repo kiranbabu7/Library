@@ -5,9 +5,6 @@ class Book {
     this.pages = pages;
     this.read = read;
   }
-  //   status(){
-  //       this.read? 'Completed Reading': 'Not read yet'
-  //   }
   info() {
     console.log(
       `${this.title} by ${this.author}, ${this.pages} pages,${

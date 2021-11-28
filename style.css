@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #9b9cf8;
+  min-height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo span {
+  font-size: 25px;
+}
+.add-btn button {
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+.hero {
+  min-height: 90vh;
+}
