@@ -19,9 +19,45 @@
         </lord-icon>
         <span>Virtual Library</span>
       </div>
-      <div class="add-btn"><button>Add Book</button></div>
+      <div class="show-modal"><button>Add Book</button></div>
     </div>
-    <div class="hero"></div>
+    <div class="hero"><div class="bookshelf"></div></div>
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>Add New Book</h1>
+      <div class="form">
+        <label for="title"
+          >Title:<input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Harry Potter" /></label
+        ><label for="author"
+          >Author:<input
+            type="text"
+            name="author"
+            id="author"
+            placeholder="J. K. Rowling" /></label
+        ><label for="pages"
+          >Pages:<input
+            type="number"
+            name="pages"
+            id="pages"
+            placeholder="223" /></label
+        ><label for="status"
+          >Status:<br /><input
+            type="checkbox"
+            name="status"
+            id="status"
+          />Completed Reading</label
+        >
+
+        <div class="form-btn">
+          <button type="submit" class="save">Save</button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
     <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
     <script src="./script.js"></script>
   </body>
