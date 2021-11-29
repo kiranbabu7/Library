@@ -21,6 +21,7 @@ html {
 }
 .hero {
   min-height: 90vh;
+  flex: 1 1 30rem;
 }
 /* .show-modal  */
 button {
@@ -51,7 +52,7 @@ button {
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -73,6 +74,7 @@ button {
   font-size: large;
   text-align: center;
   padding: 3rem;
+  z-index: 15;
 }
 .form input {
   height: 3rem;
@@ -87,7 +89,7 @@ button {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -98,6 +100,7 @@ button {
 }
 .bookshelf {
   display: flex;
+  flex-wrap: wrap;
 }
 .card {
   margin: 5rem;
@@ -105,6 +108,7 @@ button {
   width: 35rem;
   background-color: #333;
   display: flex;
+  flex: 0 1 35rem;
   flex-direction: column;
   align-items: center;
 }

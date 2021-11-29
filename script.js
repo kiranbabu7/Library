@@ -32,6 +32,12 @@ let statusBox = document.querySelector("#status");
 const saveBtn = document.querySelector(".save");
 const bookShelf = document.querySelector(".bookshelf");
 
+bookShelf.addEventListener("click", removeBook);
+bookShelf.addEventListener("click", updateStatus);
+saveBtn.addEventListener("click", function (e) {
+  new Book(title.value, author.value, pages.value, statusBox.checked);
+  hideModla();
+});
 class Book {
   constructor(title, author, pages, read) {
     this.title = title;
@@ -39,6 +45,7 @@ class Book {
     this.pages = pages;
     this.read = read;
     books.push(this);
+    Createcard(this);
   }
 }
 function Createcard(book) {
@@ -56,7 +63,9 @@ function Createcard(book) {
   }`;
   const ReadBtn = document.createElement("button");
   ReadBtn.textContent = "Read";
+  ReadBtn.classList.add("read");
   const removeBtn = document.createElement("button");
+  removeBtn.classList.add("remove");
   removeBtn.textContent = "Remove";
   card.appendChild(bookName);
   card.appendChild(authorName);
@@ -66,17 +75,28 @@ function Createcard(book) {
   card.appendChild(removeBtn);
   bookShelf.appendChild(card);
 }
-saveBtn.addEventListener("click", function (e) {
-  new Book(title.value, author.value, pages.value, statusBox.checked);
-  addBooks();
-  hideModla();
-});
-function addBooks() {
-  books.forEach((book) => {
-    Createcard(book);
-  });
+
+let rnd = new Book("think and grow", "nepolean hill", 320, true);
+
+function removeBook(e) {
+  let item = e.target;
+  if (item.classList.contains("remove")) {
+    item.parentElement.remove();
+  }
 }
-let rnd = new Book("kiran", "kira", 20, true);
-let rnd2 = new Book("kiran", "kira", 20, true);
-let rnd3 = new Book("kiran", "kira", 20, true);
-addBooks();
+function updateStatus(e) {
+  let item = e.target;
+  if (item.classList.contains("read")) {
+    e.target.parentElement.childNodes[3].textContent = "Not Read yet";
+    item.textContent = "Read";
+    item.classList.add("not-read");
+    item.classList.remove("read");
+    console.log(item);
+  } else if (item.classList.contains("not-read")) {
+    e.target.parentElement.childNodes[3].textContent = "Completed Reading";
+    item.textContent = "Not Read";
+    item.classList.add("read");
+    item.classList.remove("not-read");
+    console.log(item);
+  }
+}
