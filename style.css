@@ -10,7 +10,13 @@ html {
 }
 
 .header {
-  background-color: #9b9cf8;
+  background: rgb(19, 54, 119);
+  background: linear-gradient(
+    90deg,
+    rgba(19, 54, 119, 1) 0%,
+    rgba(3, 180, 186, 1) 100%
+  );
+  color: rgb(224, 224, 224);
   min-height: 10vh;
   display: flex;
   justify-content: space-between;
@@ -106,11 +112,21 @@ button {
   margin: 5rem;
   height: 35rem;
   width: 35rem;
-  background-color: #333;
   display: flex;
   flex: 0 1 35rem;
   flex-direction: column;
   align-items: center;
+
+  border-radius: 45px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(42, 199, 143, 1) 0%,
+    rgba(0, 246, 255, 1) 49%,
+    rgba(73, 113, 189, 1) 98%
+  );
+  box-shadow: 9px 9px 11px #a9a9a8, -9px -9px 11px #ffffff;
 }
 .card h3 {
   font-size: 2.5rem;
